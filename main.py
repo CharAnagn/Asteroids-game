@@ -39,6 +39,10 @@ def main():
 
         updatable_group.update(dt)
 
+        for asteroid in asteroids_group:
+            if main_player.check_collision(asteroid):
+                print("Game over!")
+                return
 
         for sprite in drawable_group:
             sprite.draw(screen)
